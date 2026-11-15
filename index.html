@@ -4,1029 +4,605 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#073b2e">
-<title>Адилет & Амира | Үйлөнүү тою</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#123d32">
+<title>Адилет & Амира — Үйлөнүү тоюна чакыруу</title>
 
 <style>
 :root {
-  --green: #073b2e;
-  --green-dark: #031f18;
-  --green-light: #14543f;
-  --gold: #c6a45d;
-  --gold-light: #ead7a7;
-  --white: #fffdf8;
-  --cream: #f8f5ec;
+  --green:#123d32;
+  --green2:#1d5143;
+  --ivory:#f7f3e9;
+  --paper:#fffdf8;
+  --gold:#c6a15b;
+  --gold2:#e5cf9e;
+  --ink:#263a32;
+  --muted:#6c786f;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
-  background: var(--green);
-  color: var(--white);
-  font-family: 'Cormorant Garamond', serif;
-  overflow-x: hidden;
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;
 }
+button,input {font:inherit}
 
-button {
-  font: inherit;
-}
-
-.section {
-  min-height: 100svh;
-  padding: 70px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.section-inner {
-  width: min(100%, 650px);
-  position: relative;
-  z-index: 2;
-}
-
-.section::before,
-.section::after {
-  content: "✧";
-  position: absolute;
-  color: rgba(198,164,93,.25);
-  font-size: 45px;
-}
-
-.section::before {
-  top: 25px;
-  left: 20px;
-}
-
-.section::after {
-  bottom: 25px;
-  right: 20px;
-}
-
-.eyebrow {
-  font-family: Montserrat, sans-serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gold-light);
-}
-
-.script {
-  font-family: 'Great Vibes', cursive;
-  color: var(--gold-light);
-  font-size: clamp(36px, 8vw, 56px);
-}
-
-.section-title {
-  font-size: clamp(30px, 7vw, 48px);
-  font-weight: 400;
-  color: var(--gold-light);
-  margin: 15px 0;
-}
-
-.gold-line {
-  width: 90px;
-  height: 1px;
-  background: var(--gold);
-  margin: 25px auto;
-  position: relative;
-}
-
-.gold-line::after {
-  content: "✦";
-  position: absolute;
-  color: var(--gold);
-  background: var(--green);
-  padding: 0 10px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 13px;
-}
-
-/* БИРИНЧИ ЭКРАН — КОНВЕРТ */
-
+/* БАШКЫ КОНВЕРТ */
 .intro {
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: 25px;
-  background:
-    radial-gradient(ellipse at center, #155744 0%, #073b2e 55%, #041f19 100%);
-  position: relative;
-  overflow: hidden;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:radial-gradient(ellipse at center,#245747 0%,#123d32 68%,#0b2c25 100%);
+  overflow:hidden;
 }
-
-.intro::before,
-.intro::after {
-  content: "✦";
-  position: absolute;
-  color: rgba(231,210,155,.25);
-  font-size: 80px;
-}
-
-.intro::before {
-  top: 10%;
-  left: 9%;
-}
-
-.intro::after {
-  bottom: 10%;
-  right: 9%;
-}
-
 .envelope-wrap {
-  width: min(88vw, 390px);
-  text-align: center;
+  width:min(88vw,410px);
+  text-align:center;
 }
-
 .envelope {
-  width: 100%;
-  aspect-ratio: 1.15 / 1;
-  position: relative;
-  border: 1px solid var(--gold);
-  background: linear-gradient(145deg, #0c5943, #073528);
-  box-shadow: 0 25px 65px #0008, inset 0 0 35px #c6a45d18;
-  cursor: pointer;
-  overflow: visible;
-  transition: transform .5s ease, opacity .8s ease;
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:.82/1;
+  border:1px solid var(--gold);
+  border-radius:5px;
+  cursor:pointer;
+  background:linear-gradient(145deg,#1e5747,#10382f 72%);
+  box-shadow:0 25px 70px #0005,inset 0 0 45px #d5b66a18;
+  overflow:hidden;
+  transition:transform .35s,opacity .7s;
 }
-
-.envelope::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(231,210,155,.45);
-  pointer-events: none;
+.envelope:before,.envelope:after {
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
 }
-
-.envelope::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+.envelope:before {
   background:
-    linear-gradient(145deg, transparent 49.7%, #c6a45d 50%, transparent 50.5%),
-    linear-gradient(35deg, transparent 49.7%, #c6a45d 50%, transparent 50.5%);
-  opacity: .5;
-  pointer-events: none;
+    linear-gradient(145deg,transparent 49.6%,#c6a15b 50%,transparent 50.5%),
+    linear-gradient(35deg,transparent 49.6%,#b18b4b 50%,transparent 50.5%);
+  opacity:.65;
 }
-
-.envelope-flap {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 55%;
-  background: linear-gradient(145deg, #17654e, #0b4938);
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  transform-origin: top;
-  transition: transform 1s ease;
+.envelope:after {
+  inset:13px;
+  border:1px solid #d9bd7b70;
 }
-
+.flap {
+  position:absolute;
+  z-index:2;
+  left:0;right:0;top:0;
+  height:54%;
+  background:linear-gradient(150deg,#28624f,#164536);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:transform 1s;
+  filter:drop-shadow(0 3px 3px #0003);
+}
 .seal {
-  position: absolute;
-  z-index: 4;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: #fff8df;
-  font-size: 35px;
-  background: radial-gradient(circle at 35% 30%, #f0d99c, #bd9649 55%, #806027);
-  border: 5px double #f3e1b2;
-  box-shadow: 0 7px 20px #0007, inset 0 0 0 3px #fff5d055;
-  transition: opacity .5s ease, transform .5s ease;
+  position:absolute;
+  z-index:3;
+  left:50%;top:49%;
+  transform:translate(-50%,-50%);
+  width:112px;height:112px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff4d7;
+  font-size:36px;
+  background:radial-gradient(circle at 35% 30%,#e1c47e,#a77b35 62%,#795421);
+  border:5px double #f1dfb4;
+  box-shadow:0 7px 16px #0005,inset 0 0 0 3px #fff5d755;
+  transition:.5s;
 }
-
 .seal small {
-  position: absolute;
-  bottom: 20px;
-  font-family: Montserrat, sans-serif;
-  font-size: 8px;
-  letter-spacing: 1px;
+  position:absolute;
+  font:10px Arial,sans-serif;
+  bottom:21px;
+  letter-spacing:.12em;
 }
-
-.envelope.opening .envelope-flap {
-  transform: rotateX(180deg);
+.envelope.opening .flap {
+  transform:rotateX(180deg);
+  z-index:0;
 }
-
 .envelope.opening .seal {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(.5);
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.6);
 }
-
 .envelope.opening {
-  opacity: 0;
-  transform: scale(.9) translateY(-15px);
+  transform:translateY(-8px) scale(.98);
+  opacity:0;
+  pointer-events:none;
 }
-
-.open-text {
-  margin-top: 32px;
-  color: var(--gold-light);
-  font-family: Montserrat, sans-serif;
-  font-size: 11px;
-  letter-spacing: 4px;
+.hint {
+  color:var(--gold2);
+  letter-spacing:.22em;
+  font:13px Arial,sans-serif;
+  margin:24px 0 0;
 }
+.intro.hide {display:none}
 
-.open-subtitle {
-  color: #e8dfc9;
-  font-size: 19px;
-  margin-top: 12px;
-  font-style: italic;
-}
-
-.intro.hide {
-  display: none;
-}
-
-/* ЧАКЫРУУ */
-
+/* ЧАКЫРУУ БӨЛҮГҮ */
 .invitation {
-  display: none;
+  display:none;
+  max-width:900px;
+  margin:0 auto;
+  padding:24px 16px 70px;
 }
-
 .invitation.show {
-  display: block;
-  animation: fadeIn 1.2s ease both;
+  display:block;
+  animation:fadeIn .9s ease both;
 }
-
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {opacity:0;transform:translateY(18px)}
+  to {opacity:1;transform:none}
 }
-
-/* ЭКИНЧИ ЭКРАН — ЖАШТАР */
-
-.couple-section {
-  background: radial-gradient(ellipse at center, #14543f, var(--green) 70%);
+.paper {
+  background:var(--paper);
+  padding:clamp(22px,5vw,58px);
+  border:1px solid #ddc99d;
+  box-shadow:0 15px 50px #253b2b14;
+  text-align:center;
+  position:relative;
 }
-
-.photo-frame {
-  width: min(88%, 420px);
-  margin: 30px auto 25px;
-  padding: 9px;
-  border: 1px solid var(--gold);
-  background: var(--cream);
-  position: relative;
-  box-shadow: 0 15px 45px #0005;
+.paper:before {
+  content:'';
+  position:absolute;
+  inset:10px;
+  border:1px solid #c6a15b55;
+  pointer-events:none;
 }
-
-.photo-frame::before {
-  content: "";
-  position: absolute;
-  inset: 15px;
-  border: 1px solid rgba(198,164,93,.7);
-  z-index: 2;
-  pointer-events: none;
+.eyebrow {
+  font:12px Arial,sans-serif;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:#92713a;
 }
-
+.rule {
+  width:110px;
+  height:1px;
+  background:var(--gold);
+  margin:26px auto;
+  position:relative;
+}
+.rule:after {
+  content:'✧';
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-55%);
+  background:var(--paper);
+  padding:0 10px;
+  color:var(--gold);
+  font-size:18px;
+}
 .couple-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 570px;
-  object-fit: contain;
+  display:block;
+  width:min(100%,520px);
+  max-height:650px;
+  object-fit:cover;
+  object-position:center 58%;
+  margin:28px auto 20px;
+  border:7px solid white;
+  outline:1px solid #d7c08e;
+  box-shadow:0 10px 28px #0002;
 }
-
 .names {
-  font-size: clamp(42px, 10vw, 72px);
-  color: var(--gold-light);
-  font-weight: 400;
-  line-height: 1.1;
-  margin-top: 20px;
+  font-size:clamp(38px,9vw,68px);
+  font-weight:400;
+  line-height:1.1;
+  color:var(--green);
+  margin:16px 0;
 }
-
-.names span {
-  font-family: 'Great Vibes', cursive;
-  color: var(--white);
-  font-size: .75em;
-  padding: 0 8px;
+.amp {
+  color:var(--gold);
+  font-style:italic;
 }
-
-.couple-caption {
-  font-family: Montserrat, sans-serif;
-  color: #e6dfcf;
-  letter-spacing: 3px;
-  font-size: 10px;
-  margin-top: 15px;
+.invite-text {
+  font-size:clamp(16px,3.5vw,19px);
+  line-height:1.85;
+  max-width:610px;
+  margin:20px auto;
+  color:#34483e;
 }
-
-/* ЧАКЫРУУ СӨЗДӨРҮ */
-
-.words-section {
-  background: var(--cream);
-  color: var(--green);
+.date {
+  font-size:clamp(27px,6vw,40px);
+  color:#98743a;
+  letter-spacing:.08em;
+  margin:12px 0;
 }
-
-.words-section::before,
-.words-section::after {
-  color: rgba(157,124,57,.25);
-}
-
-.words-section .gold-line::after {
-  background: var(--cream);
-}
-
-.words-section .eyebrow {
-  color: #94763e;
-}
-
-.words-section .script {
-  color: #987b43;
-}
-
-.invite-message {
-  max-width: 520px;
-  margin: 25px auto;
-  font-size: clamp(21px, 5vw, 27px);
-  line-height: 1.65;
-  color: #254b3d;
-}
-
-.words-bottom {
-  font-family: 'Great Vibes', cursive;
-  color: #987b43;
-  font-size: 37px;
-  margin-top: 25px;
+.time {
+  font-size:23px;
+  color:var(--green);
+  margin:10px 0 24px;
 }
 
 /* КАЛЕНДАРЬ */
-
-.calendar-section {
-  background: radial-gradient(ellipse at center, #14543f, var(--green) 75%);
+.calendar {
+  max-width:430px;
+  margin:22px auto 28px;
+  padding:18px;
+  background:#f8f4e9;
+  border:1px solid #dfcfad;
 }
-
-.calendar-card {
-  width: min(100%, 430px);
-  margin: 30px auto 0;
-  padding: 28px 22px;
-  border: 1px solid var(--gold);
-  background: rgba(255,255,255,.035);
-  box-shadow: 0 15px 40px #0003;
+.calendar-title {
+  font-size:20px;
+  color:var(--green);
+  letter-spacing:.1em;
+  margin-bottom:14px;
 }
-
-.month {
-  font-size: 32px;
-  color: var(--gold-light);
-  letter-spacing: 3px;
-  margin-bottom: 8px;
-}
-
-.year {
-  font-family: Montserrat, sans-serif;
-  font-size: 11px;
-  letter-spacing: 5px;
-  color: #e8dfc9;
-  margin-bottom: 25px;
-}
-
 .calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 7px 3px;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:5px;
+}
+.calendar-grid span {
+  padding:9px 2px;
+  font-size:14px;
+}
+.calendar-grid .dayname {
+  font:11px Arial,sans-serif;
+  color:#967847;
+}
+.calendar-grid .chosen {
+  background:var(--green);
+  color:#fff;
+  border-radius:50%;
+  font-weight:bold;
+  box-shadow:0 0 0 3px #d9c28e;
 }
 
-.calendar-grid div {
-  min-height: 39px;
-  display: grid;
-  place-items: center;
-  font-family: Montserrat, sans-serif;
-  font-size: 13px;
-  color: #f5f0e3;
+/* САНАК */
+.countdown {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:26px 0;
+}
+.countdown div {
+  min-width:75px;
+  padding:12px 7px;
+  border:1px solid #dfcfad;
+  background:#fff;
+}
+.countdown strong {
+  display:block;
+  font-size:25px;
+  font-weight:400;
+  color:var(--green);
+}
+.countdown span {
+  font:10px Arial,sans-serif;
+  color:var(--muted);
+  letter-spacing:.08em;
 }
 
-.calendar-grid .weekday {
-  color: var(--gold-light);
-  font-size: 10px;
-  font-weight: 500;
+/* СҮРӨТТӨР */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  max-width:650px;
+  margin:26px auto;
+}
+.gallery img {
+  display:block;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border:5px solid white;
+  outline:1px solid #dfcfad;
+  box-shadow:0 7px 20px #0001;
+}
+.gallery img:first-child {
+  object-position:center 60%;
 }
 
-.calendar-grid .empty {
-  visibility: hidden;
+/* ТОЙКАНА ЖАНА RSVP */
+.venue {
+  font-size:20px;
+  line-height:1.8;
+  margin:20px 0;
+  color:var(--ink);
 }
-
-.calendar-grid .selected {
-  width: 36px;
-  height: 36px;
-  min-height: 36px;
-  justify-self: center;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--green-dark);
-  font-weight: 700;
-  box-shadow: 0 0 0 3px rgba(198,164,93,.22);
+.btn {
+  display:inline-block;
+  border:1px solid var(--gold);
+  background:var(--green);
+  color:#fff9e9;
+  padding:13px 23px;
+  text-decoration:none;
+  cursor:pointer;
+  letter-spacing:.05em;
+  transition:.2s;
 }
-
-.calendar-note {
-  margin-top: 25px;
-  font-size: 20px;
-  color: var(--gold-light);
-  font-style: italic;
+.btn:hover {background:var(--green2)}
+.rsvp {
+  margin-top:38px;
+  padding-top:24px;
+  border-top:1px solid #e4d6bd;
 }
-
-/* УБАКЫТ */
-
-.time-section {
-  background: var(--cream);
-  color: var(--green);
-}
-
-.time-section .eyebrow {
-  color: #987b43;
-}
-
-.time-section .gold-line::after {
-  background: var(--cream);
-}
-
-.time-display {
-  font-size: clamp(65px, 17vw, 105px);
-  color: #987b43;
-  line-height: 1.1;
-  margin: 22px 0;
-}
-
-.time-label {
-  font-family: Montserrat, sans-serif;
-  font-size: 11px;
-  letter-spacing: 4px;
-  color: #52675b;
-}
-
-/* ЛОКАЦИЯ */
-
-.location-section {
-  background: radial-gradient(ellipse at center, #14543f, var(--green) 75%);
-}
-
-.location-icon {
-  font-size: 45px;
-  color: var(--gold-light);
-  margin: 20px 0;
-}
-
-.venue-name {
-  font-size: clamp(30px, 7vw, 42px);
-  color: var(--gold-light);
-  margin: 15px 0;
-}
-
-.venue-address {
-  font-size: 21px;
-  line-height: 1.6;
-  color: #eee8d9;
-  margin: 15px auto 30px;
-}
-
-.map-button {
-  display: inline-block;
-  padding: 14px 27px;
-  border: 1px solid var(--gold);
-  color: var(--gold-light);
-  text-decoration: none;
-  font-family: Montserrat, sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  transition: .3s;
-}
-
-.map-button:hover {
-  background: var(--gold);
-  color: var(--green-dark);
-}
-
-/* RSVP */
-
-.rsvp-section {
-  min-height: 75svh;
-  background: var(--cream);
-  color: var(--green);
-}
-
-.rsvp-section .eyebrow {
-  color: #987b43;
-}
-
-.rsvp-section .gold-line::after {
-  background: var(--cream);
-}
-
-.rsvp-text {
-  font-size: 21px;
-  line-height: 1.5;
-  margin: 20px auto;
-  max-width: 450px;
-}
-
 .rsvp input {
-  display: block;
-  width: min(100%, 340px);
-  margin: 22px auto 15px;
-  padding: 14px;
-  border: 1px solid #b99b5e;
-  background: transparent;
-  color: var(--green);
-  text-align: center;
-  font-family: Montserrat, sans-serif;
-  font-size: 13px;
-  outline: none;
+  width:min(100%,360px);
+  padding:13px;
+  border:1px solid #d9c8a7;
+  background:white;
+  color:var(--ink);
+  margin:8px 0 14px;
 }
-
 .rsvp-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
-
-.rsvp-actions button {
-  padding: 13px 22px;
-  border: 1px solid #a8894d;
-  color: #846a35;
-  background: transparent;
-  font-family: Montserrat, sans-serif;
-  font-size: 10px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.rsvp-actions button:hover {
-  background: var(--green);
-  color: var(--gold-light);
-}
-
 .rsvp-status {
-  min-height: 28px;
-  margin-top: 18px;
-  color: #987b43;
-  font-size: 17px;
+  min-height:26px;
+  color:var(--green);
+  margin-top:14px;
 }
-
-.final-names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: #987b43;
-  margin-top: 25px;
-}
-
-/* МУЗЫКА */
-
 .music-control {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 20;
-  display: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  background: var(--green);
-  color: var(--gold-light);
-  font-size: 19px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px #0005;
+  position:fixed;
+  right:17px;
+  bottom:17px;
+  z-index:10;
+  display:none;
+  width:50px;height:50px;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  background:var(--green);
+  color:#fff4d7;
+  box-shadow:0 4px 16px #0003;
+  cursor:pointer;
+  font-size:19px;
+}
+.music-control.show {display:block}
+footer {
+  font-size:13px;
+  color:#827762;
+  margin-top:30px;
 }
 
-.music-control.show {
-  display: block;
-}
-
-/* ТЕЛЕФОН ҮЧҮН */
-
-@media (max-width: 480px) {
-  .section {
-    padding: 60px 18px;
-  }
-
-  .calendar-card {
-    padding: 22px 13px;
-  }
-
-  .calendar-grid {
-    gap: 5px 1px;
-  }
-
-  .calendar-grid div {
-    min-height: 35px;
-    font-size: 12px;
-  }
-
-  .calendar-grid .selected {
-    width: 33px;
-    height: 33px;
-    min-height: 33px;
-  }
-
-  .seal {
-    width: 92px;
-    height: 92px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
+@media(max-width:560px) {
+  .gallery {grid-template-columns:1fr}
+  .gallery img {height:auto;max-height:470px}
+  .paper {padding:28px 20px}
+  .seal {width:96px;height:96px}
+  .calendar-grid span {
+    padding:8px 0;
+    font-size:13px;
   }
 }
 </style>
 </head>
 
 <body>
+<main>
 
-<!-- 1. КОНВЕРТ -->
-
-<section class="intro" id="intro">
+<!-- БАШКЫ КОНВЕРТ -->
+<section class="intro" id="intro" aria-label="Чакыруу конверти">
   <div class="envelope-wrap">
-
-    <button class="envelope" id="openEnvelope" aria-label="Чакыруу конвертин ачуу">
-      <div class="envelope-flap"></div>
-
-      <div class="seal">
-        ❦
-        <small>АДИЛЕТ • АМИРА</small>
-      </div>
+    <button class="envelope" id="openEnvelope" aria-label="Конвертти ачуу">
+      <span class="flap"></span>
+      <span class="seal">❧<small>АДИЛЕТ • АМИРА</small></span>
     </button>
-
-    <p class="open-text">TAP TO OPEN</p>
-    <p class="open-subtitle">Сиз үчүн өзгөчө чакыруу</p>
-
+    <p class="hint">КОНВЕРТТИ АЧУУ ҮЧҮН БАСЫҢЫЗ</p>
   </div>
 </section>
 
+<!-- НЕГИЗГИ ЧАКЫРУУ -->
+<section class="invitation" id="invitation">
+<div class="paper">
 
-<!-- БАРДЫК ЧАКЫРУУ БӨЛҮМДӨРҮ -->
+  <div class="eyebrow">Сизди үйлөнүү үлпөтүбүзгө чакырабыз</div>
+  <div class="rule"></div>
 
-<main class="invitation" id="invitation">
+  <img
+    class="couple-photo"
+    src="assets/couple.jpg"
+    alt="Адилет менен Амира мечитте"
+    loading="eager"
+  >
 
-  <!-- 2. ЖАШТАРДЫН СҮРӨТҮ -->
+  <h1 class="names">АДИЛЕТ <span class="amp">&</span> АМИРА</h1>
 
-  <section class="section couple-section">
-    <div class="section-inner">
+  <p class="invite-text">
+    Өмүрүбүздүн эң маанилүү жана бактылуу күнүндө
+    сиздерди жаныбыздан көрүп, кубанычыбызды
+    бөлүшкүбүз келет. Биздин үйлөнүү тоюбуздун
+    кадырлуу коногу болуңуздар!
+  </p>
 
-      <p class="eyebrow">Үйлөнүү үлпөтүнө чакыруу</p>
-      <div class="gold-line"></div>
+  <div class="rule"></div>
+  <div class="eyebrow">Биздин көз ирмемдер</div>
 
-      <p class="script">Эки жүрөк — бир тагдыр</p>
+  <div class="gallery">
+    <img src="assets/rings.png" alt="Жубайлардын шакектери" loading="lazy">
+    <img src="assets/calendar-rings.png" alt="Той күнүнө арналган сүрөт" loading="lazy">
+    <img src="assets/envelope-art.png" alt="Алтын мөөрлүү чакыруу конверти" loading="lazy">
+  </div>
 
-      <div class="photo-frame">
-        <img
-          class="couple-photo"
-          src="assets/couple.jpg"
-          alt="Адилет менен Амира"
-        >
-      </div>
+  <div class="rule"></div>
+  <div class="eyebrow">Той күнү</div>
 
-      <h1 class="names">
-        АДИЛЕТ <span>&</span> АМИРА
-      </h1>
+  <div class="date">25 ДЕКАБРЬ 2026</div>
+  <div class="time">Саат 16:00</div>
 
-      <div class="gold-line"></div>
+  <!-- КАЛЕНДАРЬ -->
+  <div class="calendar">
+    <div class="calendar-title">ДЕКАБРЬ 2026</div>
 
-      <p class="couple-caption">
-        БИЗДИН БАХТЫБЫЗГА ОРТОКТОШУҢУЗ
-      </p>
+    <div class="calendar-grid">
+      <span class="dayname">ДШ</span>
+      <span class="dayname">ШШ</span>
+      <span class="dayname">ШР</span>
+      <span class="dayname">БШ</span>
+      <span class="dayname">ЖМ</span>
+      <span class="dayname">ИШ</span>
+      <span class="dayname">ЖК</span>
 
+      <span></span>
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+      <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+      <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+      <span>21</span><span>22</span><span>23</span><span>24</span>
+      <span class="chosen">25</span>
+      <span>26</span><span>27</span>
+      <span>28</span><span>29</span><span>30</span><span>31</span>
+      <span></span><span></span>
     </div>
-  </section>
+  </div>
 
+  <!-- ТОЙГО ЧЕЙИНКИ УБАКЫТ -->
+  <div class="countdown" aria-label="Тойго чейинки убакыт">
+    <div><strong id="days">—</strong><span>КҮН</span></div>
+    <div><strong id="hours">—</strong><span>СААТ</span></div>
+    <div><strong id="minutes">—</strong><span>МҮНӨТ</span></div>
+    <div><strong id="seconds">—</strong><span>СЕКУНД</span></div>
+  </div>
 
-  <!-- 3. ЧАКЫРУУ СӨЗДӨРҮ -->
+  <div class="rule"></div>
+  <div class="eyebrow">Той өтүүчү жай</div>
 
-  <section class="section words-section">
-    <div class="section-inner">
+  <div class="venue">
+    <strong>«Ак-Сарай» тойканасы</strong><br>
+    Бишкек шаары, Кара-Жыгач конушу
+  </div>
 
-      <p class="eyebrow">Сиздерге болгон ак тилегибиз менен</p>
-      <div class="gold-line"></div>
+  <!-- ТОЙКАНАНЫН ГЕОЛОКАЦИЯСЫ -->
+  <a
+    class="btn"
+    href="https://maps.app.goo.gl/B47yQcneiEzgnzBWA"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    КАРТАДАН КӨРҮҮ
+  </a>
 
-      <p class="script">Кымбаттуу жакындарыбыз!</p>
+  <!-- RSVP -->
+  <div class="rsvp">
+    <div class="eyebrow">Катышууңузду ырастаңыз</div>
 
-      <h2 class="section-title">Сиздерди чакырабыз</h2>
+    <p class="invite-text">
+      Келериңизди же келе албай турганыңызды
+      белгилеп коюңуз.
+    </p>
 
-      <p class="invite-message">
-        Жашообуздагы эң маанилүү жана кубанычтуу күндөрдүн биринде
-        биз менен бирге болушуңуздарды каалайбыз.
-        <br><br>
-        Биздин бактыбызга ортоктош болуп,
-        ак тилегиңиздерди айтып, кубанычыбызды бөлүшүп
-        кетишиңиздерди чын жүрөктөн күтөбүз.
-      </p>
+    <input
+      id="guestName"
+      type="text"
+      placeholder="Атыңыз-жөнүңүз"
+      aria-label="Атыңыз-жөнүңүз"
+    >
 
-      <div class="gold-line"></div>
-
-      <p class="words-bottom">Бул өзгөчө күнү жолугушканча!</p>
-
+    <div class="rsvp-actions">
+      <button class="btn" type="button" data-answer="Келем">КЕЛЕМ</button>
+      <button class="btn" type="button" data-answer="Келе албайм">КЕЛЕ АЛБАЙМ</button>
     </div>
-  </section>
 
+    <div class="rsvp-status" id="rsvpStatus" aria-live="polite"></div>
+  </div>
 
-  <!-- 4. КАЛЕНДАРЬ -->
+  <footer>Сүйүү жана бакыт менен — Адилет &amp; Амира</footer>
 
-  <section class="section calendar-section">
-    <div class="section-inner">
-
-      <p class="eyebrow">Календарыңызга белгилеп коюңуз</p>
-      <div class="gold-line"></div>
-
-      <h2 class="section-title">Биздин өзгөчө күнүбүз</h2>
-
-      <div class="calendar-card">
-
-        <div class="month">ДЕКАБРЬ</div>
-        <div class="year">2026</div>
-
-        <div class="calendar-grid">
-
-          <div class="weekday">ДҮЙ</div>
-          <div class="weekday">ШЕЙ</div>
-          <div class="weekday">ШАР</div>
-          <div class="weekday">БЕЙ</div>
-          <div class="weekday">ЖУМ</div>
-          <div class="weekday">ИШЕ</div>
-          <div class="weekday">ЖЕК</div>
-
-          <div class="empty"> </div>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-          <div>10</div>
-          <div>11</div>
-          <div>12</div>
-          <div>13</div>
-
-          <div>14</div>
-          <div>15</div>
-          <div>16</div>
-          <div>17</div>
-          <div>18</div>
-          <div>19</div>
-          <div>20</div>
-
-          <div>21</div>
-          <div>22</div>
-          <div>23</div>
-          <div>24</div>
-          <div class="selected">25</div>
-          <div>26</div>
-          <div>27</div>
-
-          <div>28</div>
-          <div>29</div>
-          <div>30</div>
-          <div>31</div>
-
-        </div>
-
-        <p class="calendar-note">25-декабрь, Жума</p>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 5. УБАКЫТ -->
-
-  <section class="section time-section">
-    <div class="section-inner">
-
-      <p class="eyebrow">Салтанаттын башталышы</p>
-      <div class="gold-line"></div>
-
-      <p class="script">Сиздерди күтөбүз</p>
-
-      <div class="time-display">16:00</div>
-
-      <p class="time-label">КҮНҮ — 25.12.2026</p>
-
-      <div class="gold-line"></div>
-
-      <p style="font-size:21px;line-height:1.6;">
-        Өзгөчө күнүбүздүн кубанычын
-        сиздер менен бөлүшүүгө кубанычтабыз.
-      </p>
-
-    </div>
-  </section>
-
-
-  <!-- 6. ЛОКАЦИЯ -->
-
-  <section class="section location-section">
-    <div class="section-inner">
-
-      <p class="eyebrow">Биздин жолугушуу дареги</p>
-      <div class="gold-line"></div>
-
-      <p class="script">Той өтүүчү жай</p>
-
-      <div class="location-icon">⌖</div>
-
-      <h2 class="venue-name">«Ак-Сарай» тойканасы</h2>
-
-      <p class="venue-address">
-        Бишкек шаары,<br>
-        Кара-Жыгач конушу
-      </p>
-
-      <a
-        class="map-button"
-        href="https://www.google.com/maps/search/?api=1&query=Ак-Сарай+тойканасы+Кара-Жыгач+Бишкек"
-        target="_blank"
-        rel="noopener"
-      >
-        КАРТАДАН КӨРҮҮ
-      </a>
-
-    </div>
-  </section>
-
-
-  <!-- 7. RSVP -->
-
-  <section class="section rsvp-section">
-    <div class="section-inner">
-
-      <p class="eyebrow">Сиздерди чыдамсыздык менен күтөбүз</p>
-      <div class="gold-line"></div>
-
-      <p class="script">Келериңизди билдирип коюңуз</p>
-
-      <p class="rsvp-text">
-        Биздин кубанычыбызга ортоктош болоруңузга ишенебиз.
-        Катышууңузду алдын ала белгилеп коюңуз.
-      </p>
-
-      <div class="rsvp">
-
-        <input
-          type="text"
-          id="guestName"
-          placeholder="Атыңызды жазыңыз"
-        >
-
-        <div class="rsvp-actions">
-
-          <button type="button" data-answer="Келем">
-            КЕЛЕМ
-          </button>
-
-          <button type="button" data-answer="Келе албайм">
-            КЕЛЕ АЛБАЙМ
-          </button>
-
-        </div>
-
-        <p class="rsvp-status" id="rsvpStatus"></p>
-
-      </div>
-
-      <div class="gold-line"></div>
-
-      <p class="final-names">Адилет & Амира</p>
-
-      <p class="eyebrow" style="margin-top:15px;">
-        Сүйүү менен күтөбүз
-      </p>
-
-    </div>
-  </section>
-
+</div>
+</section>
 </main>
 
-
 <!-- МУЗЫКА -->
-
-<audio
-  id="weddingSong"
-  src="assets/osh_kyndu.mp3"
-  preload="none"
-  loop
-></audio>
-
-<button
-  class="music-control"
-  id="musicControl"
-  aria-label="Музыканы токтотуу"
->
-  Ⅱ
-</button>
-
+<audio id="weddingSong" preload="none" loop src="assets/osh_kyndu.mp3"></audio>
+<button class="music-control" id="musicControl" aria-label="Музыканы токтотуу">Ⅱ</button>
 
 <script>
-
-/* КОНВЕРТТИ АЧУУ */
-
-const envelope = document.getElementById("openEnvelope");
-const intro = document.getElementById("intro");
-const invitation = document.getElementById("invitation");
-const song = document.getElementById("weddingSong");
-const musicControl = document.getElementById("musicControl");
+const envelope = document.getElementById('openEnvelope');
+const intro = document.getElementById('intro');
+const invitation = document.getElementById('invitation');
+const song = document.getElementById('weddingSong');
+const musicControl = document.getElementById('musicControl');
 
 let opened = false;
 
-envelope.addEventListener("click", async () => {
-
+/* КОНВЕРТ АЧЫЛГАНДА МУЗЫКА БАШТАЛАТ */
+envelope.addEventListener('click', async () => {
   if (opened) return;
 
   opened = true;
+  envelope.classList.add('opening');
+  intro.classList.add('hide');
+  invitation.classList.add('show');
+  musicControl.classList.add('show');
 
-  envelope.classList.add("opening");
-
-  // Музыка конверт басылганда гана башталат.
   try {
     await song.play();
   } catch (error) {
-    console.log("Музыка ойнотулган жок:", error);
+    musicControl.textContent = '▶';
   }
-
-  musicControl.classList.add("show");
-
-  setTimeout(() => {
-    intro.classList.add("hide");
-    invitation.classList.add("show");
-    window.scrollTo(0, 0);
-  }, 850);
-
 });
 
-
-/* МУЗЫКАНЫ ТОКТОТУУ ЖАНА КАЙРА КОШУУ */
-
-musicControl.addEventListener("click", async () => {
-
+/* МУЗЫКАНЫ БАШКАРУУ */
+musicControl.addEventListener('click', async () => {
   if (song.paused) {
     try {
       await song.play();
+      musicControl.textContent = 'Ⅱ';
     } catch (error) {
-      console.log(error);
+      musicControl.textContent = '▶';
     }
   } else {
     song.pause();
+    musicControl.textContent = '▶';
   }
-
 });
 
-song.addEventListener("play", () => {
-  musicControl.textContent = "Ⅱ";
+song.addEventListener('play', () => {
+  musicControl.textContent = 'Ⅱ';
 });
 
-song.addEventListener("pause", () => {
-  musicControl.textContent = "▶";
+song.addEventListener('pause', () => {
+  musicControl.textContent = '▶';
 });
 
+/* ТОЙГО ЧЕЙИНКИ САНАК */
+const weddingDate = new Date('2026-12-25T16:00:00+06:00').getTime();
 
-/* RSVP — ЖООПТУ ЭКРАНДА КӨРСӨТҮҮ */
+function updateCountdown() {
+  let diff = Math.max(0, weddingDate - Date.now());
 
-document.querySelectorAll("[data-answer]").forEach(button => {
+  document.getElementById('days').textContent =
+    Math.floor(diff / 86400000);
 
-  button.addEventListener("click", () => {
+  document.getElementById('hours').textContent =
+    Math.floor(diff % 86400000 / 3600000);
 
-    const name = document.getElementById("guestName").value.trim();
-    const status = document.getElementById("rsvpStatus");
+  document.getElementById('minutes').textContent =
+    Math.floor(diff % 3600000 / 60000);
+
+  document.getElementById('seconds').textContent =
+    Math.floor(diff % 60000 / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* RSVP ЖООБУ */
+document.querySelectorAll('[data-answer]').forEach(button => {
+  button.addEventListener('click', () => {
+    const name = document.getElementById('guestName').value.trim();
+    const status = document.getElementById('rsvpStatus');
 
     if (!name) {
-      status.textContent = "Сураныч, атыңызды жазыңыз.";
-      document.getElementById("guestName").focus();
+      status.textContent = 'Сураныч, атыңызды жазыңыз.';
+      document.getElementById('guestName').focus();
       return;
     }
 
     status.textContent =
-      `${name}, жообуңуз кабыл алынды: ${button.dataset.answer}.`;
-
+      `${name}, жообуңуз белгиленди: «${button.dataset.answer}».`;
   });
-
 });
-
 </script>
 
 </body>
